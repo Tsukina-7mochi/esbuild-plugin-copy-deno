@@ -92,7 +92,11 @@ const copyPlugin = (option: Option): Plugin => {
             console.log(`copy: ${src} -> ${dest}`);
           });
         }
-        await Promise.all(copyFromTo.map(({ src, dest }) => copy(src, dest)));
+        await Promise.all(copyFromTo.map(({ src, dest }) => copy(
+          src,
+          dest,
+          { overwrite: true }
+        )));
       });
     },
   };
