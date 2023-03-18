@@ -23,8 +23,6 @@ interface Option {
  *   baseDir: './src',
  *   // base directory of destination files
  *   baseOutDir: './dist',
- *   // directory ignored by wild card (see: npm:glob)
- *   ignoreDirs: ['./cache'],
  *   // files should be copied
  *   files: [
  *     { from: 'imgs/*', to: 'imgs/[name].[ext]' },
