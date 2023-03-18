@@ -25,8 +25,8 @@ interface Option {
  *   baseOutDir: './dist',
  *   // files should be copied
  *   files: [
- *     { from: 'imgs/*', to: 'imgs/[name].[ext]' },
- *     { from: 'wasm/*', to: 'wasm/[name].[ext]' },
+ *     { from: 'imgs/*', to: 'imgs/[name][ext]' },
+ *     { from: 'wasm/*', to: 'wasm/[name][ext]' },
  *   ]
  * })
  * ```
