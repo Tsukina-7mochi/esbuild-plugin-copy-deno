@@ -16,16 +16,16 @@ const config: Partial<esbuild.BuildOptions> = {
   platform: 'browser',
   plugins: [
     copyPlugin({
-        // base directory of source files
-        baseDir: './src',
-        // base directory of destination files
-        baseOutDir: './dist',
-        // files should be copied
-        files: [
-            { from: 'imgs/*', to: 'imgs/[name].[ext]' },
-            { from: 'wasm/*', to: 'wasm/[name].[ext]' },
-        ]
-    })
-  ]
-}
+      // base directory of source files
+      baseDir: './src',
+      // base directory of destination files
+      baseOutDir: './dist',
+      // files should be copied
+      files: [
+        { from: 'imgs/*', to: 'imgs/[name].[ext]' },
+        { from: 'wasm/*', to: 'wasm/[name].[ext]' },
+      ],
+    }),
+  ],
+};
 ```
