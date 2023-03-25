@@ -29,6 +29,7 @@
     "https://deno.land/std@0.180.0/_util/asserts.ts": "178dfc49a464aee693a7e285567b3d0b555dc805ff490505a8aae34f9cfb1462",
     "https://deno.land/std@0.180.0/_util/os.ts": "d932f56d41e4f6a6093d56044e29ce637f8dcc43c5a90af43504a889cf1775e3",
     "https://deno.land/std@0.180.0/fs/_util.ts": "65381f341af1ff7f40198cee15c20f59951ac26e51ddc651c5293e24f9ce6f32",
+    "https://deno.land/std@0.180.0/fs/copy.ts": "14214efd94fc3aa6db1e4af2b4b9578e50f7362b7f3725d5a14ad259a5df26c8",
     "https://deno.land/std@0.180.0/fs/ensure_dir.ts": "dc64c4c75c64721d4e3fb681f1382f803ff3d2868f08563ff923fdd20d071c40",
     "https://deno.land/std@0.180.0/fs/expand_glob.ts": "e4f56259a0a70fe23f05215b00de3ac5e6ba46646ab2a06ebbe9b010f81c972a",
     "https://deno.land/std@0.180.0/fs/walk.ts": "ea95ffa6500c1eda6b365be488c056edc7c883a1db41ef46ec3bf057b1c0fe32",
@@ -45,6 +46,8 @@
     "https://deno.land/x/denoflate@1.2.1/pkg/denoflate.js": "b9f9ad9457d3f12f28b1fb35c555f57443427f74decb403113d67364e4f2caf4",
     "https://deno.land/x/denoflate@1.2.1/pkg/denoflate_bg.wasm.js": "d581956245407a2115a3d7e8d85a9641c032940a8e810acbd59ca86afd34d44d",
     "https://deno.land/x/esbuild@v0.17.11/mod.d.ts": "dc279a3a46f084484453e617c0cabcd5b8bd1920c0e562e4ea02dfc828c8f968",
-    "https://deno.land/x/esbuild@v0.17.11/mod.js": "4f4e61964a551d9c0baf5bb19e973cf631cf8c66ddaf01e70070f8a100fc938c"
+    "https://deno.land/x/esbuild@v0.17.11/mod.js": "4f4e61964a551d9c0baf5bb19e973cf631cf8c66ddaf01e70070f8a100fc938c",
+    "https://deno.land/x/esbuild@v0.17.13/mod.d.ts": "dc279a3a46f084484453e617c0cabcd5b8bd1920c0e562e4ea02dfc828c8f968",
+    "https://deno.land/x/esbuild@v0.17.13/mod.js": "99302be2ce2a11eecd7a0764d970e2a0aa1c2d38d5ffcbb041d360a124c9aabc"
   }
 }

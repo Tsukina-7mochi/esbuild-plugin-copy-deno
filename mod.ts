@@ -1,8 +1,8 @@
-import { Plugin } from 'https://deno.land/x/esbuild@v0.17.11/mod.js';
+import { Plugin } from 'https://deno.land/x/esbuild@v0.17.13/mod.js';
 import { posix } from 'https://deno.land/std@0.180.0/path/mod.ts';
 import { expandGlob } from 'https://deno.land/std@0.180.0/fs/expand_glob.ts';
 import { ensureDir } from 'https://deno.land/std@0.180.0/fs/ensure_dir.ts';
-import { copy } from 'https://deno.land/std@0.170.0/fs/copy.ts';
+import { copy } from 'https://deno.land/std@0.180.0/fs/copy.ts';
 
 interface Option {
   baseDir?: string;
@@ -92,11 +92,13 @@ const copyPlugin = (option: Option): Plugin => {
             console.log(`copy: ${src} -> ${dest}`);
           });
         }
-        await Promise.all(copyFromTo.map(({ src, dest }) => copy(
-          src,
-          dest,
-          { overwrite: true }
-        )));
+        await Promise.all(copyFromTo.map(({ src, dest }) =>
+          copy(
+            src,
+            dest,
+            { overwrite: true },
+          )
+        ));
       });
     },
   };
