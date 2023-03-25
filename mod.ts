@@ -1,8 +1,6 @@
-import { Plugin } from 'https://deno.land/x/esbuild@v0.17.13/mod.js';
-import { posix } from 'https://deno.land/std@0.180.0/path/mod.ts';
-import { expandGlob } from 'https://deno.land/std@0.180.0/fs/expand_glob.ts';
-import { ensureDir } from 'https://deno.land/std@0.180.0/fs/ensure_dir.ts';
-import { copy } from 'https://deno.land/std@0.180.0/fs/copy.ts';
+import { esbuild } from './deps.ts';
+import { posix } from './deps.ts';
+import { fs } from './deps.ts';
 
 interface Option {
   baseDir?: string;
@@ -31,7 +29,7 @@ interface Option {
  * })
  * ```
  */
-const copyPlugin = (option: Option): Plugin => {
+const copyPlugin = (option: Option): esbuild.Plugin => {
   const baseDir = option.baseDir ?? Deno.cwd();
   const baseOutDir = option.baseOutDir ?? Deno.cwd();
   const runAt = option?.runAt ?? 'onStart';
@@ -49,7 +47,7 @@ const copyPlugin = (option: Option): Plugin => {
             ? file.from
             : posix.join(baseDir, file.from);
 
-          for await (const fromFile of expandGlob(fromFileGlob)) {
+          for await (const fromFile of fs.expandGlob(fromFileGlob)) {
             if (!fromFile.isFile) {
               continue;
             }
@@ -83,7 +81,7 @@ const copyPlugin = (option: Option): Plugin => {
 
         // ensure all output directory
         await Promise.all(
-          Array.from(ensureDirNames).map((dirname) => ensureDir(dirname)),
+          Array.from(ensureDirNames).map((dirname) => fs.ensureDir(dirname)),
         );
 
         // copy files
@@ -93,7 +91,7 @@ const copyPlugin = (option: Option): Plugin => {
           });
         }
         await Promise.all(copyFromTo.map(({ src, dest }) =>
-          copy(
+          fs.copy(
             src,
             dest,
             { overwrite: true },
