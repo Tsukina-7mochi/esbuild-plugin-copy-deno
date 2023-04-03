@@ -11,10 +11,10 @@ Deno.test('Copy file #1', async () => {
           baseDir: 'test/src',
           baseOutDir: 'test/dest',
           files: [
-            { from: 'page1.html', to: '[name][ext]' }
-          ]
-        })
-      ]
+            { from: 'page1.html', to: '[name][ext]' },
+          ],
+        }),
+      ],
     });
     await ctx.rebuild();
   } finally {
@@ -23,7 +23,7 @@ Deno.test('Copy file #1', async () => {
 
   assertEquals(
     Deno.readTextFileSync('test/dest/page1.html'),
-    'page1\n'
+    'page1\n',
   );
 });
 
@@ -36,10 +36,10 @@ Deno.test('Copy file #2', async () => {
           baseDir: 'test/src',
           baseOutDir: 'test/dest',
           files: [
-            { from: 'some/resource4.txt', to: 'res/[name][ext]' }
-          ]
-        })
-      ]
+            { from: 'some/resource4.txt', to: 'res/[name][ext]' },
+          ],
+        }),
+      ],
     });
     await ctx.rebuild();
   } finally {
@@ -48,7 +48,7 @@ Deno.test('Copy file #2', async () => {
 
   assertEquals(
     Deno.readTextFileSync('test/dest/res/resource4.txt'),
-    'resource4\n'
+    'resource4\n',
   );
 });
 
@@ -61,10 +61,10 @@ Deno.test('Copy file #3', async () => {
           baseDir: 'test/src',
           baseOutDir: 'test/dest',
           files: [
-            { from: 'page1.html', to: '[path]/[name][ext]' }
-          ]
-        })
-      ]
+            { from: 'page1.html', to: '[path]/[name][ext]' },
+          ],
+        }),
+      ],
     });
     await ctx.rebuild();
   } finally {
@@ -73,7 +73,7 @@ Deno.test('Copy file #3', async () => {
 
   assertEquals(
     Deno.readTextFileSync('test/dest/page1.html'),
-    'page1\n'
+    'page1\n',
   );
 });
 
@@ -86,10 +86,10 @@ Deno.test('Copy file #4', async () => {
           baseDir: 'test/src',
           baseOutDir: 'test/dest',
           files: [
-            { from: 'some/resource4.txt', to: '[path]/[name][ext]' }
-          ]
-        })
-      ]
+            { from: 'some/resource4.txt', to: '[path]/[name][ext]' },
+          ],
+        }),
+      ],
     });
     await ctx.rebuild();
   } finally {
@@ -98,7 +98,7 @@ Deno.test('Copy file #4', async () => {
 
   assertEquals(
     Deno.readTextFileSync('test/dest/some/resource4.txt'),
-    'resource4\n'
+    'resource4\n',
   );
 });
 
@@ -112,10 +112,10 @@ Deno.test('Copy multi files #1', async () => {
           baseOutDir: 'test/dest',
           files: [
             { from: 'page1.html', to: 'index.html' },
-            { from: 'page2.html', to: 'sub.html' }
-          ]
-        })
-      ]
+            { from: 'page2.html', to: 'sub.html' },
+          ],
+        }),
+      ],
     });
     await ctx.rebuild();
   } finally {
@@ -124,10 +124,10 @@ Deno.test('Copy multi files #1', async () => {
 
   assertEquals(
     Deno.readTextFileSync('test/dest/index.html'),
-    'page1\n'
+    'page1\n',
   );
   assertEquals(
     Deno.readTextFileSync('test/dest/sub.html'),
-    'page2\n'
+    'page2\n',
   );
 });
