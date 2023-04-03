@@ -71,7 +71,7 @@ const copyPlugin = (option: Option): esbuild.Plugin => {
                 .replace('[ext]', ext),
             );
 
-            ensureDirNames.add(outDirname);
+            ensureDirNames.add(posix.dirname(toFile));
             copyFromTo.push({
               src: fromFile.path,
               dest: toFile,
