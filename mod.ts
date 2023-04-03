@@ -56,7 +56,6 @@ const copyPlugin = (option: Option): esbuild.Plugin => {
             const dirname = posix.dirname(
               posix.relative(baseDir, fromFile.path),
             );
-            const outDirname = posix.resolve(baseOutDir, dirname);
             const ext = posix.extname(fromFile.name);
             const name = posix.basename(
               ext.length === 0
