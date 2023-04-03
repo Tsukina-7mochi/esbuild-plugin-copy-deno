@@ -56,7 +56,6 @@ const copyPlugin = (option: Option): esbuild.Plugin => {
             const dirname = posix.dirname(
               posix.relative(baseDir, fromFile.path),
             );
-            const outDirname = posix.resolve(baseOutDir, dirname);
             const ext = posix.extname(fromFile.name);
             const name = posix.basename(
               ext.length === 0
@@ -71,7 +70,7 @@ const copyPlugin = (option: Option): esbuild.Plugin => {
                 .replace('[ext]', ext),
             );
 
-            ensureDirNames.add(outDirname);
+            ensureDirNames.add(posix.dirname(toFile));
             copyFromTo.push({
               src: fromFile.path,
               dest: toFile,
