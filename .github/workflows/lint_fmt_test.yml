@@ -1,13 +1,6 @@
 name: lint and check format
 
-on:
-  push:
-    branches: [main, dev]
-    pull_request:
-      branches: [main, dev]
-
-permissions:
-  contents: read
+on: push
 
 jobs:
   lint-and-fmt:
