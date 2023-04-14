@@ -1,9 +1,9 @@
-name: lint and check format
+name: lint, check format and test
 
 on: push
 
 jobs:
-  lint-and-fmt:
+  lint-fmt-test:
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
