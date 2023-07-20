@@ -20,5 +20,8 @@
     "options": {
       "singleQuote": true
     }
+  },
+  "tasks": {
+    "test": "deno test -A"
   }
 }
